@@ -63,6 +63,8 @@ func handleMetadataResponse(response *http.Response) (*api.Metadata, error) {
 		return nil, err
 	}
 
+	fmt.Printf("Metadata: %s", string(rb))
+
 	var m api.Metadata
 	err = json.Unmarshal(rb, &m)
 	if err != nil {
